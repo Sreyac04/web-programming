@@ -1,0 +1,34 @@
+<html>
+<head>
+    
+    <title>Fibonacci Sequence</title>
+    <script>
+        function printFibonacci() {
+            let terms = parseInt(document.getElementById("terms").value);  
+            if (terms <= 0) {
+                document.getElementById("result").innerText = "Enter a positive number.";
+                return;
+            }
+
+            let fib1 = 0, fib2 = 1, sequence = [fib1, fib2];
+
+            for (let i = 2; i < terms; i++) {
+                let nextFib = fib1 + fib2;
+                sequence.push(nextFib);
+                fib1 = fib2;
+                fib2 = nextFib;
+            }
+
+            document.getElementById("result").innerText = "Fibonacci Sequence: " + sequence.join(", ");
+        }
+    </script>
+</head>
+<body bgcolor="orange">
+    <h1>Fibonacci Sequence</h1>
+    <label>Enter a number:</label><input type="number" id="terms" />
+    <br><br>
+    <button onclick="printFibonacci()">Generate</button>
+    <p id="result"></p>
+</body>
+</html>
+

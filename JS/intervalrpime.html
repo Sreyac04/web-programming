@@ -1,0 +1,49 @@
+<html>
+<head>
+    <title>Prime or Not</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+            background-color: yellow;
+            color: #90AFC5;
+        }
+    </style>
+</head>
+<body>
+    <h1>Check if a Number is Prime or Not</h1>
+    <label for="start">Enter the start number: </label>
+    <input type="number" id="start" required>
+    <br><br>
+    <label for="stop">Enter the stop number: </label>
+    <input type="number" id="stop" required>
+    <br><br>
+    <button onclick="
+        var start = parseInt(document.getElementById('start').value);
+        var stop = parseInt(document.getElementById('stop').value);
+        var resultText = '';
+
+        // Function to check if a number is prime
+        function isPrime(num) {
+            for (var i = 2; i <= num/2; i++) {
+                if (num % i === 0) return false;
+            }
+            return true;
+        }
+
+        // Loop through the range and check if each number is prime
+        for (var i = start; i <= stop; i++) {
+            if (isPrime(i)) {
+                resultText += i + ' is a prime number.<br>';
+            } 
+        }
+
+        // Display the result
+        document.getElementById('result').innerHTML = resultText;
+    ">Check</button>
+
+    <p id="result"></p>
+</body>
+</html>
+

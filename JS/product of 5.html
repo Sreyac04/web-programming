@@ -1,0 +1,39 @@
+<html>
+	<head>
+		<title>5 number pruduct</title>
+	</head>
+	<body bgcolor="teal">
+	<h1>Product of 5 numbers</h1>
+	<label for"n1">enter 1st no: </label>
+	<input type="number" id="n1" min="1" required><br><br>
+	<label for"n2">enter 2nd no: : </label>
+	<input type="number" id="n2" min="1" required><br><br>
+	<label for"n3">enter 3rd no: </label>
+	<input type="number" id="n3" min="1" required><br><br>
+	<label for"n4">enter 4th no:</label>
+	<input type="number" id="n4" min="1" required><br><br>
+	<label for"n5">enter 5th no:: </label>
+	<input type="number" id="n5" min="1" required><br><br>
+	
+	
+	<button onclick="product()">Caluculate</button>
+	
+	<p id="result"></p>
+
+	<script>
+        function product()
+        {
+        var n1=parseInt(document.getElementById("n1").value);
+        var n2=parseInt(document.getElementById("n2").value);
+        var n3=parseInt(document.getElementById("n3").value);
+        var n4=parseInt(document.getElementById("n4").value);
+        var n5=parseInt(document.getElementById("n5").value);
+        
+        var product=n1*n2*n3*n4*n5;
+        
+        document.getElementById("result").textContent="Product : "+product;
+        }
+        </script>
+</body>
+</html>
+
