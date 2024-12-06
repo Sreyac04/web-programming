@@ -1,0 +1,21 @@
+<html>
+<head>
+<title>Image & text</title>
+</head>
+<body>
+<h1 id="txt"> Chocolate </h1>
+<img id="img1" onmouseover="myfunction1()" onmouseout="myfunction2()" src="/home/ksb/Downloads/chocolate.jpg">
+<script>
+function myfunction1()
+{
+	document.getElementById("img1").src="/home/ksb/Downloads/ferraro.jpg";
+	document.getElementById("txt").innerHTML="ferraro rocher";
+}
+function myfunction2()
+{
+	document.getElementById("img1").src="/home/ksb/Downloads/chocolate.jpg";
+	document.getElementById("txt").innerHTML="choco";
+}
+</script>
+</body>
+</html>
