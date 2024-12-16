@@ -1,0 +1,131 @@
+<html>
+<body bgcolor="orange">
+<h1 align="center"><b>REGISTRATION FORM</b></h1>
+
+<script>
+function regform() {
+  var fname = document.myform.fname.value;
+  var lname = document.myform.lname.value;
+  var dob = document.myform.dob.value;
+  var gender = document.myform.gender.value;
+  var address = document.myform.address.value;
+  var qualifi = document.myform.quali.value;
+  var phone = document.myform.phone.value;
+  var country = document.myform.country.value;
+  var password = document.myform.password.value;
+  var cpassword = document.myform.cpassword.value;
+
+  if (fname == null || fname == "") {
+    alert("First Name can't be blank!");
+    return false;
+  }
+
+  if (lname == null || lname == "") {
+    alert("Last Name can't be blank!");
+    return false;
+  }
+
+  if (dob == null || dob == "") {
+    alert("Date of birth can't be empty!");
+    return false;
+  }
+  
+  var today = new Date();
+  var dobDate = new Date(dob);
+
+  if (dobDate > today) {
+    alert("Date of birth cannot be a future date!");
+    return false;
+  }
+
+  if (gender == null || gender == "") {
+    alert("Gender can't be blank!");
+    return false;
+  }
+
+  if (address == null || address == "") {
+    alert("Address can't be blank!");
+    return false;
+  }
+
+  if (phone == null || phone == "") {
+    alert("Phone number can't be blank!");
+    return false;
+  } else if (!/^\d{10}$/.test(phone)) {
+    alert("Enter a valid 10-digit mobile number!");
+    return false;
+  }
+
+  if (country == null || country == "") {
+    alert("Please select a country!");
+    return false;
+  }
+
+  if (qualifi == null || qualifi == "") {
+    alert("Please select your qualification!");
+    return false;
+  }
+
+  if (password == "") {
+    alert("Enter your Password!");
+    return false;
+  } else if (password.length < 6) {
+    alert("Password must have at least 6 characters!");
+    return false;
+  }
+
+  if (cpassword == "") {
+    alert("Confirm the Password!");
+    return false;
+  } else if (cpassword != password) {
+    alert("Passwords must be the same!");
+    return false;
+  }
+
+  return true;
+}
+</script>
+
+<form name="myform" method="post" onsubmit="return regform()">
+  First Name: <input type="text" name="fname" required><br><br><br>
+  Last Name: <input type="text" name="lname" required><br><br><br>
+  Date of Birth: <input type="date" name="dob" required><br><br><br>
+  
+  Gender:
+  <input type="radio" id="male" name="gender" value="male" required> Male
+  <input type="radio" id="female" name="gender" value="female" required> Female
+  <input type="radio" id="other" name="gender" value="other" required> Other<br><br><br>
+
+  Address: <textarea name="address" rows="4" cols="50" required></textarea><br><br><br>
+
+  Country: 
+  <select name="country" required>
+    <option value="">Select a Country</option>
+    <option value="USA">USA</option>
+    <option value="India">India</option>
+    <option value="Canada">Canada</option>
+    <option value="UK">UK</option>
+    <option value="Australia">Australia</option>
+  </select><br><br><br>
+  
+  Mobile Number: <input type="text" name="phone" pattern="\d{10}" title="Enter a 10-digit mobile number" required><br><br><br>
+  
+  Qualification: 
+  <select name="quali" required>
+    <option value="">Select your Qualification</option>
+    <option value="High School">High School</option>
+    <option value="Bachelor's Degree">Bachelor's Degree</option>
+    <option value="Master's Degree">Master's Degree</option>
+    <option value="PhD">PhD</option>
+  </select><br><br><br>
+
+  Password: <input type="password" name="password" required><br><br><br>
+  Confirm Password: <input type="password" name="cpassword" required><br><br><br>
+  
+  <input type="submit" value="Submit">
+  <input type="reset" value="Reset" onclick="this.form.reset();">
+</form>
+
+</body>
+</html>
+
